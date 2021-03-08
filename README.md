@@ -4,6 +4,7 @@
 
 ## Integrantes del equipo
 
+Samuel Polo @samuelpolo59
 [Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
 
 ## Objetivos del trabajo

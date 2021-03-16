@@ -5,7 +5,10 @@ El programa que vamos a desarrollar nos dirá qué movimiento es el más favorab
 
 ## Integrantes del equipo
 
-Samuel Polo (@samuelpolo59), Arturo Martin (@arturomm), Esteban Henriquez (@estebanhenriquez) y Adrián Vallejo (@adrian.valgil).
+- Samuel Polo [@samuelpolo59](https://github.com/samuelpolo59)
+- Arturo Martin [@arturomm](https://github.com/arturomm)
+- Esteban Henriquez [@estebanhenriquez](github.com/estebanhenriquez)
+- Adrián Vallejo [@adrian.valgil](github.com/adrian.valgil)
 
 ## Objetivos del trabajo
 

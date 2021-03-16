@@ -7,8 +7,8 @@ El programa que vamos a desarrollar nos dirá qué movimiento es el más favorab
 
 - Samuel Polo [@samuelpolo59](https://github.com/samuelpolo59)
 - Arturo Martin [@arturomm](https://github.com/arturomm)
-- Esteban Henriquez [@estebanhenriquez](github.com/estebanhenriquez)
-- Adrián Vallejo [@adrian.valgil](github.com/adrian.valgil)
+- Esteban Henriquez [@estebanhenriquez](https://github.com/estebanhenriquez)
+- Adrián Vallejo [@adrian.valgil](https://github.com/adrian.valgil)
 
 ## Objetivos del trabajo
 

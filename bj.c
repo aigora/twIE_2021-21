@@ -24,11 +24,11 @@ int main()
 		int partida = 1;
 		char opcion;
 
-		Jugador *crupier = inicializarJugador(); 
-		Jugador *jugador = inicializarJugador(); 
+		Jugador *crupier = inicializarJugador();
+		Jugador *jugador = inicializarJugador();
 
         printf("BLACK JACK\n");
-        
+
         while(partida){//llegar a la mesa
         	resetearJugador(crupier);
         	resetearJugador(jugador);
@@ -72,4 +72,23 @@ int main()
         printf("Nos vemos\n");
 
         return 0;
+}
+
+Jugador* inicializarJugador(){
+	int i = 0;
+
+	Jugador *j = (Jugador*)malloc(sizeof(Jugador));
+	j->numCartas = 0;
+	for(i = 0; i < MAX_CARTAS; i++) j->cartas[i] = 0;
+
+	return j;
+}
+
+void resetearJugador(Jugador* j){
+	int i = 0;
+
+	j->numCartas = 0;
+	for(i = 0; i < MAX_CARTAS; i++) j->cartas[i] = 0;
+
+	return;
 }

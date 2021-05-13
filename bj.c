@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-typedef struct _jugador Jugador;
+#define MAX_CARTAS 9
+
+typedef struct _jugador {
+	int numCartas;
+	int cartas[MAX_CARTAS];
+} Jugador;
 
 Jugador* inicializarJugador();
 
@@ -92,7 +98,6 @@ void resetearJugador(Jugador* j){
 
 	return;
 }
-
 
 int puntuacionJugador(Jugador* j){
 	int i = 0, puntuacion = 0, carta = 0, numAses = 0;

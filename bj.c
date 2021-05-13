@@ -26,6 +26,8 @@ void comprobarGanador(Jugador* crupier, Jugador* jugador);
 
 int main()
 {
+        srand(time(NULL));
+
 		//inicializar variables
 		int partida = 1;
 		char opcion;

@@ -92,3 +92,38 @@ void resetearJugador(Jugador* j){
 
 	return;
 }
+
+
+int puntuacionJugador(Jugador* j){
+	int i = 0, puntuacion = 0, carta = 0, numAses = 0;
+
+	for(i = 0; i < j->numCartas; i++) {
+		carta = j->cartas[i];
+		if (carta > 10)
+			puntuacion += 10;
+		else if (carta == 1){//si llega un as
+			puntuacion += 1;
+			numAses++;
+		} else
+			puntuacion += carta;
+	}
+
+	for(i = 0; i < numAses; i++){
+		if (puntuacion < 11){
+			puntuacion += 10;
+		}
+	}
+
+	return puntuacion;
+}
+
+void pintarCartas(Jugador* crupier, Jugador* jugador){
+	int i = 0;
+	printf("\n-----------------------\n");
+	printf("CARTAS DEL CRUPIER:");
+	for (i = 0; i < crupier->numCartas; i++) printf(" %d", crupier->cartas[i]);
+	printf("\nPuntuacion Total Crupier: %d\n\n", puntuacionJugador(crupier));
+	printf("CARTAS DEL JUGADOR:");
+	for (i = 0; i < jugador->numCartas; i++) printf(" %d", jugador->cartas[i]);
+	printf("\nPuntuacion Total Jugador: %d\n\n", puntuacionJugador(jugador));
+}

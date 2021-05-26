@@ -1,0 +1,16 @@
++-----------------+
+|                 |
+|                 |
+|    CRUPIER      |
+|  mano: b
+|  puntuacion: b
+|                 |
+|                 |
+|                 |
+|                 |
+|    JUGADOR      |
+|  mano: b
+|  puntuacion: b
+|                 |
+|                 |
++-----------------+.

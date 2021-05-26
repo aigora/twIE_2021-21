@@ -24,6 +24,55 @@ void cogerCartasCrupier(Jugador* crupier);
 void comprobarGanador(Jugador* crupier, Jugador* jugador);
 
 
+
+void cargarTablero(char *tablero, int *manocrupier, int *pcrupier, int *manojugador, int *pjugador){
+	FILE *fp;
+	int i = 0, j = 0;
+	char c;
+	char auxTablero[999];
+
+	//abrimos fichero
+	fp = fopen("tablero.txt", "r");
+
+	//comprobamos q se abre bien
+	if (fp == NULL){
+		printf("Error while opening the file.\n");
+		return;
+	}
+
+	//bucle q lee caracter por caracter y va metiendoselo a auxTablero
+	//termina cuando el caracter c vale EOF (caracter especial de end of file)
+	c = fgetc(fp);
+	while(c != EOF){
+		//detecta una b y guarda el indice para luego meter ahi las cartas y las puntuaciones
+		if (c == 'b'){
+			if (j == 0){
+				*manocrupier = i;
+			}
+			else if (j == 1){
+				*pcrupier = i;
+			}
+			else if (j == 2){
+				*manojugador = i;
+			}
+			else if (j == 3){
+				*pjugador = i;
+			}
+			j++;
+		}
+		auxTablero[i] = c;//mete el caracter en la posicion correspondiente de auxTablero
+
+		i++;
+		c = fgetc(fp);//lee el siguiente caracter
+	}
+	//termina el bucle y mete en tablero (la variable del main) lo q vale auxTablero
+	strcpy(tablero,auxTablero);
+
+	//cierra el fp (se hace siempre al terminar de leer un fichero)
+	fclose(fp);
+}
+
+
 int main()
 {
         srand(time(NULL));

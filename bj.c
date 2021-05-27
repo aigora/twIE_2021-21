@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #define MAX_CARTAS 9
 
-typedef struct _jugador {
+typedef struct  {
 	int numCartas;
 	int cartas[MAX_CARTAS];
 } Jugador;
@@ -121,6 +122,14 @@ int main()
 		Jugador *crupier = inicializarJugador();
 		Jugador *jugador = inicializarJugador();
 
+        //carga el tablero
+		char tablero[999];
+		int manocrupier;
+		int pcrupier;
+		int manojugador;
+		int pjugador;
+		cargarTablero(tablero, &manocrupier, &pcrupier, &manojugador, &pjugador);
+
         printf("BLACK JACK\n");
 
         while(partida){//llegar a la mesa
@@ -132,7 +141,7 @@ int main()
         	cogerCarta(jugador);
 
         	while(1){//empezar una partida
-        		pintarCartas(crupier, jugador);
+        		pintarTablero(crupier, jugador, tablero, manocrupier, pcrupier, manojugador, pjugador);
         		printf("¿Que quieres hacer?\n");
         		printf("Opciones: Pedir carta (c), Plantarte (p), Doblar (d)\n");
         		scanf(" %c", &opcion);
@@ -163,6 +172,8 @@ int main()
  			}
 
         }
+        free(jugador);
+        free(crupier);
         printf("Nos vemos\n");
 
         return 0;

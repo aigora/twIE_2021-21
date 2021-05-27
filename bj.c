@@ -72,6 +72,43 @@ void cargarTablero(char *tablero, int *manocrupier, int *pcrupier, int *manojuga
 	fclose(fp);
 }
 
+void pintarTablero(Jugador* crupier, Jugador* jugador,
+					char* tablero, int mcrupier, int pcrupier, int mjugador, int pjugador){
+	int i = 0, j = 0;
+
+	printf("\n");
+	for(i = 0; i < mcrupier; i++){
+		printf("%c", tablero[i]);
+	}
+	for (j = 0; j < crupier->numCartas; j++) printf(" %d", crupier->cartas[j]);
+	for (; tablero[i] != '\n'; i++);
+
+	for(; i < pcrupier; i++){
+		printf("%c", tablero[i]);
+	}
+	printf("%d", puntuacionJugador(crupier));
+
+	for (; tablero[i] != '\n'; i++);
+
+	for(; i < mjugador; i++){
+		printf("%c", tablero[i]);
+	}
+	for (j = 0; j < jugador->numCartas; j++) printf(" %d", jugador->cartas[j]);
+	for (; tablero[i] != '\n'; i++);
+
+	for(; i < pjugador; i++){
+		printf("%c", tablero[i]);
+	}
+	printf("%d", puntuacionJugador(jugador));
+	for (; tablero[i] != '\n'; i++);
+
+	for(; tablero[i] != '.'; i++){
+		printf("%c", tablero[i]);
+	}
+
+
+	printf("\n");
+}
 
 int main()
 {

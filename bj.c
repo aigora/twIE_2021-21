@@ -247,20 +247,26 @@ void cogerCartasCrupier(Jugador* crupier){
 	return;
 }
 
-void comprobarGanador(Jugador* crupier, Jugador* jugador){
+void comprobarGanador(Jugador *crupier, Jugador *jugador)
+{
 	int pCrupier = puntuacionJugador(crupier);
 	int pJugador = puntuacionJugador(jugador);
 
     pintarCartas(crupier, jugador);
 
-	if (pCrupier > 21){
+	if (pCrupier > 21 && pJugador<=21){// HE A�ADIDO && pJugador <=21
 		printf("El crupier se ha pasado. ¡HAS GANADO!");
-	} else if (pCrupier > pJugador){
-		printf("Tienes menos puntuación que el crupier. PIERDES");
-	} else {
+	} else if (pCrupier < pJugador && pJugador<=21){
 		printf("Tienes mas puntuación que el crupier. ¡HAS GANADO!");
-	}
+	} else if (pCrupier < pJugador && pJugador>=21){
 
+		printf("Te has pasado. PIERDES");
+	}
+	  else if (pCrupier >= pJugador && pCrupier<=21){
+	    printf("Tienes menos puntuación que el crupier. PIERDES");
+	}
+      else
+        printf("Te has pasado. PIERDES");
 	printf("\n");
 
 	return;
